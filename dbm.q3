@@ -1,0 +1,4 @@
+select distinct R.tournament 
+from results R
+where R.home_team = 'Greece' or R.away_team = 'Greece'
+order by R.tournament asc;

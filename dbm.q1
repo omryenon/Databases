@@ -1,0 +1,4 @@
+select count(distinct R.city)
+from results R
+where R.city like 'L%';
+

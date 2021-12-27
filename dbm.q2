@@ -1,0 +1,4 @@
+select distinct R.country , count(R.country)
+from results R
+group by R.country
+order by count(R.country) desc;

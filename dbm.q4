@@ -1,0 +1,5 @@
+select distinct S.winner, count(S.winner) from shootouts S 
+group by S.winner
+order by count(S.winner) desc
+limit 1;
+

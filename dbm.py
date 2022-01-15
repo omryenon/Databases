@@ -1,20 +1,23 @@
 # ===============================================================================
 #  DB - Python
 # ===============================================================================
+from sys import argv
 import psycopg2
-import os
-from config import config
 
 
-def connect():
+def connect(param1 , param2):
     """ Connect to the PostgreSQL database server """
     conn=None
     try:
         # read connection parameters
-        params = config()
         # connect to the PostgreSQL server
         print('Connecting to the PostgreSQL database...')
-        conn = psycopg2.connect(**params)
+        conn = psycopg2.connect(
+            host="localhost",
+            database="footballdb",
+            user=param1,
+            password=param2,
+        )
         # create a cursor
         cur = conn.cursor()
         return [conn,cur]
@@ -30,7 +33,7 @@ def disconnect(conn,cur):
         print('Database connection closed.')
 
 if __name__ == '__main__':
-    arr = connect()
+    arr = connect(argv[1],argv[2])
     conn=arr[0]
     cur=arr[1]
     while(1):

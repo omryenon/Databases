@@ -14,4 +14,6 @@ The Program shows a menu of 5 options:
 For running the program:
 1. Create a database in PostgreSQL named footballdb.
 2. run the dbm_create_tables.sql
-3. run the main python file: dbm.py
+   (based on the results and the shootouts big databases)
+3. run the main python file: python3 dbm.py USERNAME PASSWORD
+   (USERNAME and PASSWORD are the parameters for logging into the PostgreSQL database)
